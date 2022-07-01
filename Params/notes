@@ -3,3 +3,17 @@ buffer is 73 B long
 
 0x0000000000401354  get_flag
 
+
+arguments & there asociated correct values/ registers
+	rdi | arg1 | 0x1337
+	rsi | arg2 | 0xcafebabe
+	rdx | arg3 | 0xdeadbeef
+	rcx | arg4 | 4
+
+order of registers to be set in ./params
+	rax: 1
+	rbx: 2
+	rcx: 3
+	rdx: 4
+	rsi: 5
+	rdi: 6
