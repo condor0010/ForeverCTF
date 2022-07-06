@@ -1,0 +1,3 @@
+72*"b" - Illegal instruction (core dumped)
+73+"b" - Segmentation fault (core dumped)
+
